@@ -9,5 +9,3 @@ Players vote via clickable chat or physical button blocks. Every vote places the
 📖 **[→ Full documentation in the Wiki](../../wiki)**
 
 📦 **[→ Download latest release](../../releases/latest)**
-
----
