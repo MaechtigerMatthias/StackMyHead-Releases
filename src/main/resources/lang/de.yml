@@ -1,0 +1,96 @@
+# StackMyHead – Deutsches Sprachfile
+
+# Listenansicht
+list.header: "=== StackMyHead Umfragen ==="
+list.open-header: "Laufende Umfragen:"
+list.pending-header: "Geplante Umfragen:"
+list.closed-header: "Beendete Umfragen:"
+list.empty: "Keine Umfragen vorhanden."
+list.entry.hover: "Klicke um Details zu sehen"
+list.entry.votes: "{count} Votes"
+
+# Umfrage-Detail – aktiv
+poll.created-by: "Erstellt von"
+poll.expires-in: "| Endet in"
+poll.starts-on: "Startet am {date}"
+poll.ends-on: "Endet am {date}"
+poll.ended-on: "Abstimmung am {date} geendet"
+poll.your-vote: "Dein Vote:"
+poll.vote-count: "{count} Vote"
+poll.vote-count-plural: "{count} Votes"
+poll.option.hover: "Klicke um fuer \"{option}\" zu stimmen"
+poll.click-hint: "Klicke eine Option um abzustimmen!"
+poll.checkmark: "✓"
+
+# Umfrage-Detail – beendet
+poll.closed-label: "[BEENDET]"
+poll.voters-label: "Spieler:"
+
+# Vote-Bestaetigung
+vote.confirmed: "Du hast fuer \"{option}\" gestimmt!"
+
+# Fehler
+error.no-permission: "Keine Berechtigung."
+error.usage: "Verwendung: /smh [list|help|<poll-id>|reload]"
+error.poll-not-found: "Umfrage \"{id}\" nicht gefunden."
+error.players-only: "Dieser Befehl kann nur von Spielern ausgefuehrt werden."
+error.invalid-index: "Ungueltiger Options-Index."
+error.invalid-count: "Die Anzahl muss eine positive Zahl sein."
+error.poll-closed: "Diese Umfrage ist nicht fuer Abstimmungen geoeffnet."
+error.vote-failed: "Abstimmung fehlgeschlagen. Ungueltiger Index?"
+error.location-not-set: "Kein Kopf-Positions-Override gesetzt fuer \"{option}\". Statische Positionen muessen in der polls.yml entfernt werden."
+error.answer-not-set: "Keine Antworttext-Position gesetzt fuer \"{option}\"."
+error.question-not-set: "Keine Fragetext-Position gesetzt fuer Umfrage \"{id}\"."
+error.status-not-set: "Keine Statustext-Position gesetzt fuer Umfrage \"{id}\"."
+error.not-a-button: "Du musst auf einen Knopf-Block schauen (max. 5 Bloecke entfernt)."
+error.button-not-linked: "Dieser Knopf ist mit keiner Umfrage verknuepft."
+error.button-not-set: "Kein Knopf gesetzt fuer \"{option}\"."
+error.poll-no-permission: "Du hast keine Berechtigung, an dieser Umfrage abzustimmen."
+error.poll-pending: "Diese Umfrage hat noch nicht begonnen (startet {date})."
+error.poll-ended: "Diese Umfrage ist bereits beendet."
+
+# Erfolg
+success.reloaded: "Umfragen wurden neu geladen."
+success.setlocation: "Kopf-Position gesetzt fuer \"{option}\"."
+success.setanswer: "Antworttext-Position gesetzt fuer \"{option}\"."
+success.setquestion: "Fragetext-Position gesetzt fuer Umfrage \"{id}\"."
+success.setstatus: "Status-Position gesetzt fuer Umfrage \"{id}\"."
+success.removelocation: "Kopf-Position entfernt fuer \"{option}\"."
+success.removeanswer: "Antworttext entfernt fuer \"{option}\"."
+success.removequestion: "Fragetext entfernt fuer Umfrage \"{id}\"."
+success.removestatus: "Statustext entfernt fuer Umfrage \"{id}\"."
+success.addtestheads: "{count} Testkopf/-koepfe fuer \"{option}\" hinzugefuegt."
+success.removetestheads: "Testkoepfe fuer \"{option}\" entfernt."
+success.setbutton: "Knopf-Position gesetzt fuer \"{option}\"."
+success.removebutton: "Knopf entfernt fuer \"{option}\"."
+success.cleardisplay: "Anzeige der Umfrage \"{id}\" entfernt (Koepfe, Textstaender, Knoepfe und Testkoepfe geloescht)."
+info.cleardisplay-static-remain: "Hinweis: Umfrage \"{id}\" hat noch statische 'location:'-Eintraege in polls.yml — diese muessen dort entfernt werden (danach /smh reload)."
+
+# Dauer-Formatierung
+duration.days: "{days}d {hours}h"
+duration.hours: "{hours}h {minutes}m"
+duration.minutes: "{minutes}m"
+
+# Kopf-Anzeige
+display.rebuilt: "Kopf-Anzeigen aufgebaut fuer {count} Umfrage(n)."
+display.world-not-found: "Welt \"{world}\" nicht gefunden fuer Umfrage \"{id}\" — uebersprungen."
+
+# Hilfe
+help.player-header: "Spieler-Befehle (Berechtigung: stackmyhead.vote):"
+help.admin-header: "Admin-Befehle (Berechtigung: stackmyhead.admin):"
+help.cmd.list: "Alle Umfragen auflisten"
+help.cmd.detail: "Umfrage-Details anzeigen und abstimmen"
+help.cmd.reload: "polls.yml neu laden"
+help.cmd.setlocation: "Basis-Position des Kopfstapels setzen"
+help.cmd.setanswer: "Position des Antwort-/Prozenttexts setzen"
+help.cmd.setquestion: "Position des Fragetexts setzen"
+help.cmd.setstatus: "Position des Statustexts setzen"
+help.cmd.removelocation: "Kopf-Position-Override entfernen"
+help.cmd.removeanswer: "Antworttext entfernen"
+help.cmd.removequestion: "Fragetext entfernen"
+help.cmd.removestatus: "Statustext entfernen"
+help.cmd.addtestheads: "Platzhalter-Koepfe zum Testen von Stapel-Algorithmen hinzufuegen"
+help.cmd.removetestheads: "Platzhalter-Testkoepfe entfernen"
+help.cmd.setbutton: "Angezielten Knopf mit einer Umfrage-Option verknuepfen"
+help.cmd.removebutton: "Knopf-Verknuepfung fuer eine Antwort-Option entfernen"
+help.cmd.cleardisplay: "Alle Koepfe, Textstaender und Knoepfe einer Umfrage entfernen (Voting-Daten bleiben)"

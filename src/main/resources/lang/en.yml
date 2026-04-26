@@ -1,0 +1,96 @@
+# StackMyHead – English language file
+
+# Poll list view
+list.header: "=== StackMyHead Polls ==="
+list.open-header: "Open Polls:"
+list.pending-header: "Upcoming Polls:"
+list.closed-header: "Closed Polls:"
+list.empty: "No polls available."
+list.entry.hover: "Click to see details"
+list.entry.votes: "{count} Votes"
+
+# Poll detail – active
+poll.created-by: "Created by"
+poll.expires-in: "| Ends in"
+poll.starts-on: "Starts on {date}"
+poll.ends-on: "Ends on {date}"
+poll.ended-on: "Voting ended on {date}"
+poll.your-vote: "Your vote:"
+poll.vote-count: "{count} Vote"
+poll.vote-count-plural: "{count} Votes"
+poll.option.hover: "Click to vote for \"{option}\""
+poll.click-hint: "Click an option to vote!"
+poll.checkmark: "✓"
+
+# Poll detail – closed
+poll.closed-label: "[CLOSED]"
+poll.voters-label: "Players:"
+
+# Vote confirmation
+vote.confirmed: "You voted for \"{option}\"!"
+
+# Errors
+error.no-permission: "No permission."
+error.usage: "Usage: /smh [list|help|<poll-id>|reload]"
+error.poll-not-found: "Poll \"{id}\" not found."
+error.players-only: "This command can only be used by players."
+error.invalid-index: "Invalid option index."
+error.invalid-count: "Count must be a positive number."
+error.poll-closed: "This poll is not currently open for voting."
+error.vote-failed: "Vote failed. Invalid index?"
+error.location-not-set: "No head location override is set for \"{option}\". Edit polls.yml to remove a static location."
+error.answer-not-set: "No answer text location is set for \"{option}\"."
+error.question-not-set: "No question text location is set for poll \"{id}\"."
+error.status-not-set: "No status text location is set for poll \"{id}\"."
+error.not-a-button: "You must look at a button block (max 5 blocks away)."
+error.button-not-linked: "This button is not linked to any poll."
+error.button-not-set: "No button is set for \"{option}\"."
+error.poll-no-permission: "You don't have permission to vote on this poll."
+error.poll-pending: "This poll hasn't started yet (starts {date})."
+error.poll-ended: "This poll has already ended."
+
+# Success
+success.reloaded: "Polls reloaded."
+success.setlocation: "Head location set for \"{option}\"."
+success.setanswer: "Answer text location set for \"{option}\"."
+success.setquestion: "Question text location set for poll \"{id}\"."
+success.setstatus: "Status text location set for poll \"{id}\"."
+success.removelocation: "Head location removed for \"{option}\"."
+success.removeanswer: "Answer text removed for \"{option}\"."
+success.removequestion: "Question text removed for poll \"{id}\"."
+success.removestatus: "Status text removed for poll \"{id}\"."
+success.addtestheads: "Added {count} test head(s) to \"{option}\"."
+success.removetestheads: "Test heads removed for \"{option}\"."
+success.setbutton: "Button location set for \"{option}\"."
+success.removebutton: "Button removed for \"{option}\"."
+success.cleardisplay: "Display cleared for poll \"{id}\" (heads, text stands, buttons and test heads removed)."
+info.cleardisplay-static-remain: "Note: poll \"{id}\" still has static 'location:' entries in polls.yml — edit the file and /smh reload to remove them too."
+
+# Duration formatting
+duration.days: "{days}d {hours}h"
+duration.hours: "{hours}h {minutes}m"
+duration.minutes: "{minutes}m"
+
+# Head display
+display.rebuilt: "Head displays rebuilt for {count} poll(s)."
+display.world-not-found: "World \"{world}\" not found for poll \"{id}\" — skipping."
+
+# Help
+help.player-header: "Player commands (permission: stackmyhead.vote):"
+help.admin-header: "Admin commands (permission: stackmyhead.admin):"
+help.cmd.list: "List all polls"
+help.cmd.detail: "Show poll details and vote"
+help.cmd.reload: "Reload polls.yml"
+help.cmd.setlocation: "Set head stack base location"
+help.cmd.setanswer: "Set answer/percentage text location"
+help.cmd.setquestion: "Set question text location"
+help.cmd.setstatus: "Set status text location"
+help.cmd.removelocation: "Remove head location override"
+help.cmd.removeanswer: "Remove answer text"
+help.cmd.removequestion: "Remove question text"
+help.cmd.removestatus: "Remove status text"
+help.cmd.addtestheads: "Add placeholder heads to test stack algorithms"
+help.cmd.removetestheads: "Remove placeholder test heads"
+help.cmd.setbutton: "Link the targeted button to a poll option"
+help.cmd.removebutton: "Remove button link for a poll option"
+help.cmd.cleardisplay: "Remove all heads, text stands and buttons for a poll (vote data stays)"

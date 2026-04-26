@@ -1,0 +1,91 @@
+# StackMyHead – Poll Configuration
+# ============================================================
+# Color & style codes: question text, option text and creator name support the classic
+# Minecraft '&'-codes (e.g. "&e&lMarvel oder DC" → bold yellow). Works in chat, on the
+# armor-stand text displays, and inside language files. Use "&r" to reset.
+#   Colors: &0 black  &1 dark_blue  &2 dark_green  &3 dark_aqua  &4 dark_red
+#           &5 dark_purple  &6 gold  &7 gray  &8 dark_gray  &9 blue
+#           &a green  &b aqua  &c red  &d light_purple  &e yellow  &f white
+#   Styles: &l bold  &o italic  &n underline  &m strikethrough  &k obfuscated  &r reset
+# ============================================================
+# Full example with all available fields:
+#
+# polls:
+#   my-poll-id:                    # Unique ID used in commands (no spaces)
+#     question: "Your question?"
+#     duration: "7d"               # Xm = minutes, Xh = hours, Xd = days
+                                 # Note: status is checked lazily on access, not by a background timer.
+                                 # A poll that expires mid-day will show as closed the next time
+                                 # a player runs /smh list or /smh <id>.
+#     start: "2025-06-15"          # Optional: ISO date or full instant (e.g. "2025-06-15T14:00:00Z")
+#                                  # Omit to start immediately.
+#     creator: "Admin"             # Creator name shown in chat
+#     permission: "stackmyhead.poll.my-poll-id"  # Optional: only players with this node may vote
+#     stack-algorithm: STRAIGHT    # STRAIGHT | WOBBLE | SPIRAL | ZIGZAG | WAVE | CONE
+#     head-scale: 1.0              # Optional override of global head-scale (range 0.0625 – 16.0)
+#     on-first-vote: "give {player} diamond 1"          # Optional: overrides global on-first-vote
+#                                                       # Placeholders: {player}, {poll-id}, {option}
+#     on-poll-close: "broadcast Poll {poll-id} has ended!"  # Optional: overrides global on-poll-close
+#                                                       # Placeholders: {poll-id}, {question}
+#     options:
+#       - text: "Option A"
+#         location: "world,100,64,200,0"  # Optional: world,x,y,z,yaw
+#       - text: "Option B"               # No location = chat-only (no head stack)
+#       - "Option C"                     # Short form also works (no location)
+#
+# In-game admin commands to set display locations (stored in votes.yml):
+#   /smh setlocation  <id> <option>  — head stack base position
+#   /smh setanswer    <id> <option>  — answer + percentage text stand
+#   /smh setquestion  <id>           — question text stand
+#   /smh setstatus    <id>           — status text stand (pending / active / closed)
+# ============================================================
+
+polls:
+  hogwarts-house:
+    question: "What is your favourite Hogwarts house?"
+    # stack-algorithm: STRAIGHT (default) | WOBBLE | SPIRAL | ZIGZAG | WAVE | CONE
+    stack-algorithm: STRAIGHT
+    # head-scale: 1.0 (default = global config). Overrides config.yml head-scale for this poll only.
+    options:
+      - text: "Hufflepuff"
+        location: "world,100,64,200"
+      - text: "Slytherin"
+        location: "world,103,64,200"
+      - text: "Ravenclaw"
+        location: "world,106,64,200"
+      - text: "Gryffindor"
+        location: "world,109,64,200"
+    duration: "7d"
+    creator: "Admin"
+
+  # Example: a short poll without a fixed start date (starts immediately on reload)
+  # and without in-world head locations (chat-only, no armor stands spawned).
+  # Use this as a template for quick polls that don't need a physical display.
+  superpower:
+    question: "Which superpower would you rather have?"
+    # No 'start' field → poll opens immediately when the plugin loads / reloads.
+    # duration supports: Xm (minutes), Xh (hours), Xd (days)
+    duration: "3d"
+    # Per-poll override of head size (range 0.0625 – 16.0). Spacing scales automatically.
+    head-scale: 2.0
+    stack-algorithm: WAVE
+    # No locations on options → purely chat-based voting, no head stacks in the world.
+    options:
+      - "Flight"
+      - "Invisibility"
+      - "Telekinesis"
+    creator: "Admin"
+
+  # Example: poll restricted to a permission node — players without it cannot vote.
+  # Also demonstrates per-poll command hooks that override the global config.yml entries.
+  marvel-or-dc:
+    question: "&e&lMarvel or DC?"
+    start: "2024-01-01"
+    duration: "7d"
+    permission: "stackmyhead.poll.marvel-or-dc"
+    on-first-vote: "give {player} paper 1"
+    on-poll-close: "broadcast The Marvel-or-DC poll has ended!"
+    options:
+      - "&cMarvel"
+      - "&9DC"
+    creator: "Admin"

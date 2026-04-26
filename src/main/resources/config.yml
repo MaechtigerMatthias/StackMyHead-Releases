@@ -1,0 +1,23 @@
+# StackMyHead Configuration
+# Available languages: en, de
+language: en
+
+# Command run as console when a player votes on a poll for the first time (re-votes do not trigger this).
+# Placeholders: {player}, {poll-id}, {option}
+# Can be overridden per poll in polls.yml via the 'on-first-vote' field.
+# on-first-vote: "give {player} diamond 1"
+
+# Command run as console when a poll expires.
+# Placeholders: {poll-id}, {question}
+# Can be overridden per poll in polls.yml via the 'on-poll-close' field.
+# on-poll-close: "broadcast Poll {poll-id} has ended!"
+
+# Sound played when a player right-clicks a poll button.
+# Use any Bukkit Sound enum name (https://jd.papermc.io/paper/1.21.1/org/bukkit/Sound.html).
+# Set to "" (empty) to disable.
+button-sound: "UI_BUTTON_CLICK"
+
+# Visual scale of the voter heads (1.0 = default size).
+# Range: 0.0625 (very small) to 16.0 (huge). Stack spacing adjusts automatically
+# so heads still sit on top of each other. Applied on /smh reload as well.
+head-scale: 1.0
